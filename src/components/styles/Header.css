@@ -1,0 +1,11 @@
+.header{
+    margin: 20px 0;
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.header .title{
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 25px;
+}

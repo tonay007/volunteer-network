@@ -1,0 +1,12 @@
+.homepage{
+    background-image: url('../../images/hero-bg.png');
+    background-position: top;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    background-size: contain;
+}
+
+.homepage .mask{
+    background: rgba(255, 255, 255, 0.88);
+    min-height: 100vh;
+}
