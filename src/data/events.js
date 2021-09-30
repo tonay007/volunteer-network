@@ -17,6 +17,7 @@ import shelter from '../images/animalShelter.png';
 import babysit from '../images/babySit.png';
 import stuffed from '../images/stuffedAnimals.png';
 import supplies from '../images/schoolSuffiles.png';
+import river from '../images/riverClean.png';
 
 const events = [
     {
@@ -37,7 +38,7 @@ const events = [
     },
     {
         name: 'Host a river clean-up',
-        image: child
+        image: river
     },
     {
         name: 'Clean water for children',

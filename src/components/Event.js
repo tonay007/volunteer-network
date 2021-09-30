@@ -4,10 +4,11 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 export default function Event({ title, image, color }) {
     return (
-        <div className="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+        <Link style={{textDecoration: 'none'}} to={`/register?event=${title}`} className="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
             <Card sx={{ maxWidth: '100%' }}>
                 <CardActionArea>
                     <CardMedia
@@ -23,6 +24,6 @@ export default function Event({ title, image, color }) {
                     </CardContent>
                 </CardActionArea>
             </Card>
-        </div>
+        </Link>
     )
 }

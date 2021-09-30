@@ -14,7 +14,7 @@ export default function Navbar() {
         const auth = getAuth();
         signOut(auth);
         setUser({});
-        window.location.reload(); 
+        window.location.reload();
     };
 
     return (
@@ -42,18 +42,25 @@ export default function Navbar() {
                         </li>
                         {
                             !user.isSignedIn ? (
-                                <Button href='/login' color="#3F90FC">
-                                    Login
-                                </Button>
+                                <>
+                                    <Button href='/login' color="#3F90FC">
+                                        Login
+                                    </Button>
+                                    <Button href='/admin' color="#434141">
+                                        Admin
+                                    </Button>
+                                </>
                             ) : (
-                                <Button onClick={handleLogout} color="#FF0000">
-                                    Logout
-                                </Button>
+                                <>
+                                    <Button onClick={handleLogout} color="#FF0000">
+                                        Logout
+                                    </Button>
+                                    <Button href='/dashboard' color="#3F90FC">
+                                        Dashboard
+                                    </Button>
+                                </>
                             )
                         }
-                        <Button href='/admin' color="#434141">
-                            Admin
-                        </Button>
                     </ul>
                 </div>
             </div>

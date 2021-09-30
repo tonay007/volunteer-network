@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Button from './Button';
 import './styles/InputAndButton.css';
 
-export default function InputAndButton() {
+export default function InputAndButton({search}) {
     const buttonStyle = {
         backgroundColor: '#3F90FC',
         color: 'white',
@@ -17,14 +17,24 @@ export default function InputAndButton() {
     const inputStyle = {
         borderRadius: '10px',
         borderTopRightRadius: 0,
-        borderBottomRightRadius: 0, 
+        borderBottomRightRadius: 0,
         minWidth: '30vw'
     }
 
+    const [val, setVal] = useState("");
+
+    const handleChange = e => {
+        setVal(e.target.value);
+    }
+
+    const handleSubmit = () => {
+        search(val);
+    }
+
     return (
-        <div className="iab d-inline-flex align-items-center">
-            <input style={inputStyle} placeholder="Search here..." type="text" className="form-control shadow-none" />
-            <Button href='/' style={buttonStyle} color='#3F90FC'>Search</Button>
-        </div>
+        <form className="iab d-inline-flex align-items-center">
+            <input value={val} onChange={handleChange} style={inputStyle} placeholder="Search here..." type="text" className="form-control shadow-none" />
+            <Button href="/" onClick={handleSubmit} style={buttonStyle} color='#3F90FC'>Search</Button>
+        </form>
     )
 }

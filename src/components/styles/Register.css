@@ -1,0 +1,9 @@
+.register input{
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    border-radius: 0;
+    margin-bottom: 15px;
+    font-weight: 500;
+    color: black;
+}
