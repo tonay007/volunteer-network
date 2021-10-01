@@ -6,7 +6,7 @@ import Button from "./Button";
 import { UserContext } from "./App";
 import { getAuth, signOut } from "@firebase/auth";
 
-export default function Navbar() {
+export default function Navbar({ isDash }) {
 
     const [user, setUser] = useContext(UserContext);
 
@@ -21,9 +21,9 @@ export default function Navbar() {
         <nav className="navbar navbar-expand-lg navbar-light">
             <div className="container-fluid">
                 <Link className="navbar-brand" to="/">
-                    <img src={logo} alt="logo.png" width="200px" />
+                    <img className="nav-image" src={logo} alt="logo.png" />
                 </Link>
-                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <button className="navbar-toggler shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
@@ -43,20 +43,28 @@ export default function Navbar() {
                         {
                             !user.isSignedIn ? (
                                 <>
-                                    <Button href='/login' color="#3F90FC">
+                                    <Button className="mb-2 w-100" href='/login' color="#3F90FC">
                                         Login
                                     </Button>
-                                    <Button href='/admin' color="#434141">
+                                    <Button className='w-100' href='/admin' color="#434141">
                                         Admin
                                     </Button>
                                 </>
                             ) : (
                                 <>
-                                    <Button onClick={handleLogout} color="#FF0000">
+                                    {
+                                        isDash !== "true" ? (
+                                            <Button className="w-100 mb-2" href='/dashboard' color="#3F90FC">
+                                                Dashboard
+                                            </Button>
+                                        ) : (
+                                            <li className="nav-item">
+                                                <h6 className="nav-link active" aria-current="page">{user.name}</h6>
+                                            </li>
+                                        )
+                                    }
+                                    <Button className="w-100" href="/" onClick={handleLogout} color="#FF0000">
                                         Logout
-                                    </Button>
-                                    <Button href='/dashboard' color="#3F90FC">
-                                        Dashboard
                                     </Button>
                                 </>
                             )

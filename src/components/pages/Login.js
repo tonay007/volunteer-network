@@ -5,6 +5,7 @@ import logo from '../../images/navlogo.png';
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { UserContext } from 'components/App';
 import google from '../../images/icon/google.png';
+import '../styles/Login.css'
 
 export default function Login() {
 
@@ -49,16 +50,14 @@ export default function Login() {
         }
     }
 
-
-
     return (
-        <div className="container text-center d-flex flex-column justify-content-center align-items-center">
+        <div className="login container">
             <Link to='/'>
                 <img className="my-5" src={logo} alt="logo.png" />
             </Link>
-            <div className="border rounded w-50 p-5">
+            <div className="login-box">
                 <h5 className="mt-5 mb-5"><b>Login with</b></h5>
-                <div onClick={handleLogin} className="border p-1 d-flex" style={{ borderRadius: '2em', cursor: 'pointer' }}>
+                <div onClick={handleLogin} className="google-btn">
                     <img src={google} alt="Google" />
                     <h6 className="m-auto">Continue with Google</h6>
                 </div>

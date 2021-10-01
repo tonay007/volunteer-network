@@ -13,6 +13,7 @@ import { initializeApp } from 'firebase/app';
 import { firebaseConfig } from 'firebase';
 import Register from './pages/Register';
 import PrivateRoute from './PrivateRoute';
+import Dashboard from './pages/Dashboard';
 
 // @ts-ignore
 export const UserContext = React.createContext();
@@ -27,6 +28,9 @@ function App() {
     <Router>
       <UserContext.Provider value={[user, setUser]}>
         <Switch>
+          <PrivateRoute path="/dashboard">
+            <Dashboard></Dashboard>
+          </PrivateRoute>
           <PrivateRoute path="/register">
             <Register></Register>
           </PrivateRoute>

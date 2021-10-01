@@ -18,7 +18,7 @@ export default function Homepage() {
         <div className="homepage">
             <div className="mask">
                 <div className="container">
-                    <Navbar></Navbar>
+                    <Navbar isDash="false"></Navbar>
                     <Header search={search}></Header>
                     <Events data={data}></Events>
                 </div>

@@ -1,8 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-export default function Button (props) {
-    const {href, color, children, ...rest} = props;
+export default function Button ({href, color, children, ...rest}) {
     const style = {
         backgroundColor: color,
         color: 'white',

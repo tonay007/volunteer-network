@@ -1,0 +1,36 @@
+.login {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login .google-btn {
+    border-radius: 2em;
+    cursor: pointer;
+    border: 1px lightgray solid;
+    padding: 5px;
+    display: flex;
+}
+
+.login .login-box {
+    border: 1px lightgray solid;
+    border-radius: 5px;
+    width: 60%;
+    padding: 80px;
+}
+
+@media screen and (max-width: 767px) {
+    .login .login-box {
+        width: 80%;
+        padding: 20px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .login .login-box {
+        width: 100%;
+        padding: 10px;
+    }
+}

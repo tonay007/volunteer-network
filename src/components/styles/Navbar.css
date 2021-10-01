@@ -1,9 +1,29 @@
-.navbar{
+.navbar {
     padding: 30px 0;
     font-weight: 500;
     font-size: 16px;
 }
 
-.navbar .nav-item{
+.navbar .nav-item {
     margin: 0 10px;
+}
+
+@media screen and (max-width: 991px) {
+    nav.navbar{
+        background-color: white;
+    }
+
+    .navbar .navbar-nav{
+        margin-top: 20px;
+    }
+
+    .navbar .nav-link{
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .navbar .nav-image {
+        width: 140px;
+    }
 }

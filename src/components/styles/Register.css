@@ -1,4 +1,4 @@
-.register input{
+.register input {
     border-left: 0;
     border-right: 0;
     border-top: 0;
@@ -6,4 +6,20 @@
     margin-bottom: 15px;
     font-weight: 500;
     color: black;
+}
+
+.register .reg-box {
+    border: 1px lightgray solid;
+    border-radius: 10px;
+    width: 50%;
+    padding: 30px;
+}
+
+@media screen and (max-width:991px) {
+    .register .reg-box {
+        border: 1px lightgray solid;
+        border-radius: 10px;
+        width: 100%;
+        padding: 10px;
+    }
 }
