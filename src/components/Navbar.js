@@ -43,7 +43,7 @@ export default function Navbar({ isDash }) {
                         {
                             !user.isSignedIn ? (
                                 <>
-                                    <Button className="mb-2 w-100" href='/login' color="#3F90FC">
+                                    <Button className="mb-2 w-100 me-2" href='/login' color="#3F90FC">
                                         Login
                                     </Button>
                                     <Button className='w-100' href='/admin' color="#434141">
@@ -54,7 +54,7 @@ export default function Navbar({ isDash }) {
                                 <>
                                     {
                                         isDash !== "true" ? (
-                                            <Button className="w-100 mb-2" href='/dashboard' color="#3F90FC">
+                                            <Button className="w-100 mb-2 me-2" href='/dashboard' color="#3F90FC">
                                                 Dashboard
                                             </Button>
                                         ) : (
