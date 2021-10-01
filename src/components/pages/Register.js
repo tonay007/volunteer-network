@@ -34,7 +34,7 @@ export default function Register() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await fetch('http://localhost:4000/addEvent', {
+            await fetch('https://obscure-escarpment-92866.herokuapp.com/addEvent', {
                 method: 'POST',
                 headers: {
                     "Content-type": "application/json; charset=UTF-8"

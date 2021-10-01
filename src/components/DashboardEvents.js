@@ -12,7 +12,7 @@ export default function DashboardEvents() {
     const [user] = useContext(UserContext);
 
     useEffect(() => {
-        fetch('http://localhost:4000/events?email=' + user.email, {
+        fetch('https://obscure-escarpment-92866.herokuapp.com/events?email=' + user.email, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'

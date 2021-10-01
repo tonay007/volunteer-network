@@ -8,7 +8,7 @@ export default function DashboardEvent({ id, name, date }) {
     const newDate = date.split("T")[0];
 
     const cancelEvent = (e) => {
-        fetch(`http://localhost:4000/cancel/${id}`, {
+        fetch(`https://obscure-escarpment-92866.herokuapp.com/cancel/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())
