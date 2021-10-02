@@ -17,8 +17,8 @@ export default function DashboardEvent({ id, name, date }) {
         })
             .then(res => res.json())
             .then(result => {
-                setLoading(false);
                 if (result) {
+                    setLoading(false);
                     e.target.parentNode.parentNode.parentNode.style.display = "none";
                 };
             });
