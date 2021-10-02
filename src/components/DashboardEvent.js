@@ -1,6 +1,5 @@
-import { CircularProgress } from '@mui/material';
 import eventsData from 'data/events';
-import React, { useState } from 'react';
+import React from 'react';
 
 export default function DashboardEvent({ id, name, date }) {
 
@@ -8,17 +7,14 @@ export default function DashboardEvent({ id, name, date }) {
 
     const newDate = date.split("T")[0];
 
-    const [loading, setLoading] = useState(false);
-
     const cancelEvent = (e) => {
-        setLoading(true)
+        e.target.setAttribute('disabled', true);
         fetch(`https://obscure-escarpment-92866.herokuapp.com/cancel/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())
             .then(result => {
                 if (result) {
-                    setLoading(false);
                     e.target.parentNode.parentNode.parentNode.style.display = "none";
                 };
             });
@@ -33,13 +29,7 @@ export default function DashboardEvent({ id, name, date }) {
                 <div className="p-5" style={{ width: "60%" }}>
                     <h5 className="mb-4">{event.name}</h5>
                     <h6 className="mb-5">Date: {newDate}</h6>
-                    {
-                        !loading ? (
-                            <button onClick={cancelEvent} className="btn btn-danger shadow-none">Cancel</button>
-                        ) : (
-                            <CircularProgress></CircularProgress>
-                        )
-                    }
+                    <button onClick={cancelEvent} className="btn btn-danger shadow-none">Cancel</button>
                 </div>
             </div>
         </div>
