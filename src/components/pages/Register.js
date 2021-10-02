@@ -6,7 +6,7 @@ import '../styles/Register.css';
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import { DatePicker } from '@mui/lab';
-import { Box } from '@mui/material';
+import { Box, CircularProgress } from '@mui/material';
 
 export default function Register() {
 
@@ -16,6 +16,8 @@ export default function Register() {
     const [error, setError] = useState("");
 
     const [registered, setRegistered] = useState(false);
+
+    const [loading, setLoading] = useState(false);
 
     const [formData, setFormData] = useState({
         name: user.name,
@@ -33,6 +35,7 @@ export default function Register() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setLoading(true);
         try {
             await fetch('https://obscure-escarpment-92866.herokuapp.com/addEvent', {
                 method: 'POST',
@@ -42,7 +45,8 @@ export default function Register() {
                 body: JSON.stringify(formData)
             });
             setError("");
-            setRegistered(true)
+            setRegistered(true);
+            setLoading(false);
         }
         catch (err) {
             setError("Registration Failed");
@@ -84,7 +88,13 @@ export default function Register() {
                             {
                                 error && <h6 className="text-danger">{error}</h6>
                             }
-                            <button style={{ width: '100%', fontWeight: 500, backgroundColor: '#3F90FC', border: 0, color: '#fff', padding: '10px 0' }}>Register</button>
+                            {
+                                !loading ? (
+                                    <button style={{ width: '100%', fontWeight: 500, backgroundColor: '#3F90FC', border: 0, color: '#fff', padding: '10px 0' }}>Register</button>
+                                ) : (
+                                    <CircularProgress></CircularProgress>
+                                )
+                            }
                         </form>
                     </>
                 ) : (
